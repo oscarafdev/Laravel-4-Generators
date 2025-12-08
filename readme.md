@@ -17,11 +17,12 @@ This Laravel package provides a variety of generators to speed up your developme
 
 | Branch / Tag    | Laravel support | PHP support   | Notes |
 |-----------------|-----------------|---------------|-------|
+| `laravel-11.x` (tag `11.0.0`) | 11.x              | >= 8.2       | Install via `composer require oscarafdev/laravel-4-generators:^11.0`. |
 | `laravel-10.x` (tag `10.0.0`) | 10.x              | >= 8.1       | Install via `composer require oscarafdev/laravel-4-generators:^10.0`. |
 | `laravel-9.x` (tag `9.0.0`) | 9.x               | >= 8.0.2     | Use `^9.0` for Laravel 9 projects. |
 | Legacy `2.x` (tag `2.0.24`) | 5.x – 8.x         | ^5.6 &#124;&#124; ^7.0 &#124;&#124; ^8.0 | Last release supporting older Laravel versions. |
 
-We keep a dedicated branch per major Laravel line. Work targeting Laravel 9 should happen on `laravel-9.x`, so that `master` is free to move on to Laravel 10+ later. If you need to patch an older release, check out the matching branch and publish a new `x.y.z` tag that mirrors the Laravel major version you are targeting (e.g. `9.1.0` for Laravel 9 maintenance).
+We keep a dedicated branch per major Laravel line. Active development for Laravel 11 lives on `laravel-11.x`, while `laravel-10.x`/`laravel-9.x` remain available for their respective majors. If you need to patch an older release, check out the matching branch and publish a new `x.y.z` tag that mirrors the Laravel major version you are targeting (e.g. `10.1.0` for Laravel 10 maintenance).
 
 ## Installation
 
