@@ -9,8 +9,8 @@
         }
     ],
     "require": {
-        "php": "^8.0.2",
-        "illuminate/support": "^9.0 || ^10.0"
+        "php": "^8.2",
+        "illuminate/support": "^11.0"
     },
     "require-dev": {
         "phpspec/phpspec": "^2.0",
