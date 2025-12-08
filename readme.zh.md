@@ -2,93 +2,104 @@
 
 | ?? / ?? | ??? Laravel ?? | ??? PHP ?? | ?? |
 |-------------|---------------------|-----------------|------|
-| laravel-11.x(?? 11.0.0) | 11.x | >= 8.2 | ?? composer require oscarafdev/laravel-4-generators:^11.0 ????? Laravel 11 ????????????? |
+| laravel-12.x??? 12.0.0? | 12.x | >= 8.3 | ?? `composer require oscarafdev/laravel-4-generators:^12.0` ???|
+| laravel-11.x??? 11.0.0? | 11.x | >= 8.2 | `composer require oscarafdev/laravel-4-generators:^11.0`?|
+| laravel-10.x??? 10.0.0? | 10.x | >= 8.1 | `composer require oscarafdev/laravel-4-generators:^10.0`?|
+| laravel-9.x??? 9.0.0? | 9.x | >= 8.0.2 | `composer require oscarafdev/laravel-4-generators:^9.0`?|
+| 2.x??? 2.0.24? | 5.x - 8.x | ^5.6 || ^7.0 || ^8.0 | ?? Laravel ???|
+
+master ????????? Laravel ?????????????? `laravel-<major>.x` ??????? `x.y.z` ???
+
+# ?????????
+
+| ?? / ?? | ??? Laravel ?? | ??? PHP ?? | ?? |
+|-------------|---------------------|-----------------|------|
 | laravel-10.x(?? 10.0.0) | 10.x | >= 8.1 | ?? composer require oscarafdev/laravel-4-generators:^10.0 ????? Laravel 10 ????????????? |
 | laravel-9.x(?? 9.0.0) | 9.x | >= 8.0.2 | ?? composer require oscarafdev/laravel-4-generators:^9.0 ????? Laravel 9 ?????????????? |
-| 2.x ??(?? 2.0.24) | 5.x � 8.x | ^5.6 &#124;&#124; ^7.0 &#124;&#124; ^8.0 | ?? Laravel ???????? 2.x ??? |
+| 2.x ??(?? 2.0.24) | 5.x  8.x | ^5.6 &#124;&#124; ^7.0 &#124;&#124; ^8.0 | ?? Laravel ???????? 2.x ??? |
 
-master will move to Laravel 11+, so keep maintaining older majors on laravel-10.x / laravel-9.x and cut x.y.z tags when necessary.
-# 使用自定义代码生成工具快速进行Laravel开发
+? master ??? Laravel 10+ ?,????? laravel-9.x ????? 9.x ??(??????? 9.y.z ??)?
+# 菴ｿ逕ｨ閾ｪ螳壻ｹ我ｻ｣遐∫函謌仙ｷ･蜈ｷ蠢ｫ騾溯ｿ幄｡鍬aravel蠑蜿
 
 [![Build Status](https://travis-ci.org/JeffreyWay/Laravel-4-Generators.png?branch=master)](https://travis-ci.org/JeffreyWay/Laravel-4-Generators)
 
-这个Laravle包提供了一种代码生成器，使得你可以加速你的开发进程，这些生成器包括：
+霑吩ｸｪLaravle蛹�署萓帑ｺ�ｸ遘堺ｻ｣遐∫函謌仙勣�御ｽｿ蠕嶺ｽ蜿ｯ莉･蜉騾滉ｽ逧�ｼ蜿題ｿ帷ｨ具ｼ瑚ｿ吩ｺ帷函謌仙勣蛹�峡�
 
-- `generate:model`   - 模型生成器
-- `generate:view`    - 视图生成器
-- `generate:controller`  - 控制器生成器
-- `generate:seed`    - 数据库填充器
-- `generate:migration`   - 迁移
-- `generate:pivot`   - 关联表
-- `generate:resource` -资源
-- `generate:scaffold` - 脚手架
+- `generate:model`   - 讓｡蝙狗函謌仙勣
+- `generate:view`    - 隗�崟逕滓�蝎ｨ
+- `generate:controller`  - 謗ｧ蛻ｶ蝎ｨ逕滓�蝎ｨ
+- `generate:seed`    - 謨ｰ謐ｮ蠎灘｡ｫ蜈�勣
+- `generate:migration`   - 霑∫ｧｻ
+- `generate:pivot`   - 蜈ｳ閨碑｡ｨ
+- `generate:resource` -襍�ｺ
+- `generate:scaffold` - 閼壽焔譫ｶ
 
 
-## 安装
+## 螳芽｣
 
-> [需要一个五分钟教程视频吗?](https://dl.dropboxusercontent.com/u/774859/Work/Laravel-4-Generators/Get-Started-With-Laravel-Custom-Generators.mp4)
+> [髴隕∽ｸ荳ｪ莠泌�髓滓蕗遞玖ｧ�｢大雛?](https://dl.dropboxusercontent.com/u/774859/Work/Laravel-4-Generators/Get-Started-With-Laravel-Custom-Generators.mp4)
 
-## Laravel 4.2 或者更低的版本
+## Laravel 4.2 謌冶�峩菴守噪迚域悽
 
-使用Composer安装这个包，编辑你项目的`composer.json`文件，在require中添加`way/generators`
+菴ｿ逕ｨComposer螳芽｣�ｿ吩ｸｪ蛹�ｼ檎ｼ冶ｾ台ｽ鬘ｹ逶ｮ逧Яcomposer.json`譁�ｻｶ�悟惠require荳ｭ豺ｻ蜉`way/generators`
 
     "require-dev": {
 		"way/generators": "~2.0"
 	}
 
-然后，在命令行下执行composer update：
+辟ｶ蜷趣ｼ悟惠蜻ｽ莉､陦御ｸ区鴬陦慶omposer update�
 
     composer update --dev
 
-一旦这个操作完成，就只需要最后一步，在配置文件中加入服务提供者。打开`app/config/app.php`文件，添加一个新的记录到providers数组中.
+荳譌ｦ霑吩ｸｪ謫堺ｽ懷ｮ梧��悟ｰｱ蜿ｪ髴隕∵怙蜷惹ｸ豁･�悟惠驟咲ｽｮ譁�ｻｶ荳ｭ蜉蜈･譛榊苅謠蝉ｾ幄�よ遠蠑`app/config/app.php`譁�ｻｶ�梧ｷｻ蜉荳荳ｪ譁ｰ逧�ｮｰ蠖募芦providers謨ｰ扈�ｸｭ.
 
     'Way\Generators\GeneratorsServiceProvider'
 
-这样就可以了，你已经安装完成并可以运行这个包了。运行artisan命令行则可以在终端上看到generate相关命令。
+霑呎ｷ蟆ｱ蜿ｯ莉･莠�ｼ御ｽ蟾ｲ扈丞ｮ芽｣�ｮ梧�蟷ｶ蜿ｯ莉･霑占｡瑚ｿ吩ｸｪ蛹�ｺ�りｿ占｡径rtisan蜻ｽ莉､陦悟�蜿ｯ莉･蝨ｨ扈育ｫｯ荳顔恚蛻ｰgenerate逶ｸ蜈ｳ蜻ｽ莉､縲
 
     php artisan
 
-## Laravel 5.0 或者更高版本
+## Laravel 5.0 謌冶�峩鬮倡沿譛ｬ
 
-使用Composer安装这个包，编辑你项目的`composer.json`文件，在require中添加`way/generators`
+菴ｿ逕ｨComposer螳芽｣�ｿ吩ｸｪ蛹�ｼ檎ｼ冶ｾ台ｽ鬘ｹ逶ｮ逧Яcomposer.json`譁�ｻｶ�悟惠require荳ｭ豺ｻ蜉`way/generators`
 
 	"require-dev": {
 		"way/generators": "~3.0"
 	}
-由于在Laravel高版本中默认文件夹结构，需要3.0或者更高的版本，才能适应5.0版本以上的Laravel
+逕ｱ莠主惠Laravel鬮倡沿譛ｬ荳ｭ鮟倩ｮ､譁�ｻｶ螟ｹ扈捺桷�碁怙隕3.0謌冶�峩鬮倡噪迚域悽�梧燕閭ｽ騾ょｺ5.0迚域悽莉･荳顔噪Laravel
 
-然后，在命令行下执行composer update：
+辟ｶ蜷趣ｼ悟惠蜻ｽ莉､陦御ｸ区鴬陦慶omposer update�
 
     composer update --dev
 
-一旦这个操作完成，就只需要最后一步，在配置文件中加入服务提供者。打开`app/config/app.php`文件，添加一个新的记录到providers数组中.
+荳譌ｦ霑吩ｸｪ謫堺ｽ懷ｮ梧��悟ｰｱ蜿ｪ髴隕∵怙蜷惹ｸ豁･�悟惠驟咲ｽｮ譁�ｻｶ荳ｭ蜉蜈･譛榊苅謠蝉ｾ幄�よ遠蠑`app/config/app.php`譁�ｻｶ�梧ｷｻ蜉荳荳ｪ譁ｰ逧�ｮｰ蠖募芦providers謨ｰ扈�ｸｭ.
 
     'Way\Generators\GeneratorsServiceProvider'
 
-这样就可以了，你已经安装完成并可以运行这个包了。运行artisan命令行则可以在终端上看到generate相关命令。
+霑呎ｷ蟆ｱ蜿ｯ莉･莠�ｼ御ｽ蟾ｲ扈丞ｮ芽｣�ｮ梧�蟷ｶ蜿ｯ莉･霑占｡瑚ｿ吩ｸｪ蛹�ｺ�りｿ占｡径rtisan蜻ｽ莉､陦悟�蜿ｯ莉･蝨ｨ扈育ｫｯ荳顔恚蛻ｰgenerate逶ｸ蜈ｳ蜻ｽ莉､縲
 
     php artisan
 
-## 使用示例
+## 菴ｿ逕ｨ遉ｺ萓
 
-想象一下使用一个生成器加速你的工作流。而不是打开models文件夹，创建一个新的文件，保存它，并且在文件中添加一个class，你可以简单的运行一个生成器命令即可完成这一系列动作。
+諠ｳ雎｡荳荳倶ｽｿ逕ｨ荳荳ｪ逕滓�蝎ｨ蜉騾滉ｽ逧�ｷ･菴懈ｵ√り御ｸ肴弍謇灘ｼmodels譁�ｻｶ螟ｹ�悟�蟒ｺ荳荳ｪ譁ｰ逧�枚莉ｶ�御ｿ晏ｭ伜ｮ�ｼ悟ｹｶ荳泌惠譁�ｻｶ荳ｭ豺ｻ蜉荳荳ｪclass�御ｽ蜿ｯ莉･邂蜊慕噪霑占｡御ｸ荳ｪ逕滓�蝎ｨ蜻ｽ莉､蜊ｳ蜿ｯ螳梧�霑吩ｸ邉ｻ蛻怜勘菴懊
 
-- [Migrations 迁移](#migrations)
-- [Models 模型](#models)
-- [Views 视图](#views)
-- [Seeds 填充](#seeds)
-- [Pivot 关联表](#pivot)
-- [Resources 资源](#resources)
-- [Scaffolding 脚手架](#scaffolding)
-- [Configuration 配置](#configuration)
+- [Migrations 霑∫ｧｻ](#migrations)
+- [Models 讓｡蝙犠(#models)
+- [Views 隗�崟](#views)
+- [Seeds 蝪ｫ蜈�(#seeds)
+- [Pivot 蜈ｳ閨碑｡ｨ](#pivot)
+- [Resources 襍�ｺ疹(#resources)
+- [Scaffolding 閼壽焔譫ｶ](#scaffolding)
+- [Configuration 驟咲ｽｮ](#configuration)
 
-### 迁移
+### 霑∫ｧｻ
 
-Laravel提供了一个迁移生成器，但是它仅仅能够创建数据库结构。让我们再回顾几个例子，使用`generate:migration`。
+Laravel謠蝉ｾ帑ｺ�ｸ荳ｪ霑∫ｧｻ逕滓�蝎ｨ�御ｽ�弍螳�ｻ�ｻ��螟溷�蟒ｺ謨ｰ謐ｮ蠎鍋ｻ捺桷縲りｮｩ謌台ｻｬ蜀榊屓鬘ｾ蜃荳ｪ萓句ｭ撰ｼ御ｽｿ逕ｨ`generate:migration`縲
 
     php artisan generate:migration create_posts_table
 
-如果我们不指定字段配置项，则下面这个文件将被创建在`app/database/migrations`目录下。
+螯よ棡謌台ｻｬ荳肴欠螳壼ｭ玲ｮｵ驟咲ｽｮ鬘ｹ�悟�荳矩擇霑吩ｸｪ譁�ｻｶ蟆�｢ｫ蛻帛ｻｺ蝨ｨ`app/database/migrations`逶ｮ蠖穂ｸ九
 
 ```php
 <?php
@@ -125,13 +136,13 @@ class CreatePostsTable extends Migration {
 
 ```
 
-注意，生成器能够检测到你正在尝试创建一个表。迁移的名称，尽量应该是可描述的。生成器将扫描你的生成器名字的第一个单词，并尽力确定如何继续。例如，对于迁移`create_posts_table`，关键字"create"，意味着我们应该准备必要的架构来创建表。
+豕ｨ諢擾ｼ檎函謌仙勣閭ｽ螟滓｣豬句芦菴豁｣蝨ｨ蟆晁ｯ募�蟒ｺ荳荳ｪ陦ｨ縲りｿ∫ｧｻ逧�錐遘ｰ�悟ｰｽ驥丞ｺ碑ｯ･譏ｯ蜿ｯ謠剰ｿｰ逧�ら函謌仙勣蟆�沖謠丈ｽ逧�函謌仙勣蜷榊ｭ礼噪隨ｬ荳荳ｪ蜊戊ｯ搾ｼ悟ｹｶ蟆ｽ蜉帷｡ｮ螳壼ｦゆｽ慕ｻｧ扈ｭ縲ゆｾ句ｦゑｼ悟ｯｹ莠手ｿ∫ｧｻ`create_posts_table`�悟�髞ｮ蟄"create"�梧э蜻ｳ逹謌台ｻｬ蠎碑ｯ･蜃�､�ｿ�ｦ∫噪譫ｶ譫�擂蛻帛ｻｺ陦ｨ縲
 
-如果你使用`add_user_id_to_posts_table`代替迁移的名字，在上面的示例中，关键字"add"，意味着我们将添加一行到现有的表中，然我们看看这个生成器命令。
+螯よ棡菴菴ｿ逕ｨ`add_user_id_to_posts_table`莉｣譖ｿ霑∫ｧｻ逧�錐蟄暦ｼ悟惠荳企擇逧�､ｺ萓倶ｸｭ�悟�髞ｮ蟄"add"�梧э蜻ｳ逹謌台ｻｬ蟆�ｷｻ蜉荳陦悟芦邇ｰ譛臥噪陦ｨ荳ｭ�檎┯謌台ｻｬ逵狗恚霑吩ｸｪ逕滓�蝎ｨ蜻ｽ莉､縲
 
     php artisan generate:migration add_user_id_to_posts_table
 
-这个命令将会准备一个下面这样的样板：
+霑吩ｸｪ蜻ｽ莉､蟆�ｼ壼㊥螟�ｸ荳ｪ荳矩擇霑呎ｷ逧�ｷ譚ｿ�
 
 
 ```php
@@ -170,24 +181,24 @@ class AddUserIdToPostsTable extends Migration {
 }
 ```
 
-注意：这一次我们没有做`Schema::create`
+豕ｨ諢擾ｼ夊ｿ吩ｸ谺｡謌台ｻｬ豐｡譛牙★`Schema::create`
 
-#### 关键字
+#### 蜈ｳ髞ｮ蟄
 
-当你在写迁移的名字的时候，使用下面的关键字给生成器提供提示。
+蠖謎ｽ蝨ｨ蜀呵ｿ∫ｧｻ逧�錐蟄礼噪譌ｶ蛟呻ｼ御ｽｿ逕ｨ荳矩擇逧��髞ｮ蟄礼ｻ咏函謌仙勣謠蝉ｾ帶署遉ｺ縲
 
 - `create` or `make` (`create_users_table`)
 - `add` or `insert` (`add_user_id_to_posts_table`)
 - `remove` (`remove_user_id_from_posts_table`)
 - `delete` or `drop` (`delete_users_table`)
 
-#### 生成数据库模式
+#### 逕滓�謨ｰ謐ｮ蠎捺ｨ｡蠑
 
-这是非常漂亮的，但是让我们更进一步，生成数据库模式的同时，使用`fields`选项。
+霑呎弍髱槫ｸｸ貍ゆｺｮ逧�ｼ御ｽ�弍隶ｩ謌台ｻｬ譖ｴ霑帑ｸ豁･�檎函謌先焚謐ｮ蠎捺ｨ｡蠑冗噪蜷梧慮�御ｽｿ逕ｨ`fields`騾蛾｡ｹ縲
 
     php artisan generate:migration create_posts_table --fields="title:string, body:text"
 
-在我们解释这个选项之前，让我们先看一下输出：
+蝨ｨ謌台ｻｬ隗｣驥願ｿ吩ｸｪ騾蛾｡ｹ荵句燕�瑚ｮｩ謌台ｻｬ蜈育恚荳荳玖ｾ灘��
 
 ```php
 <?php
@@ -225,14 +236,14 @@ class CreatePostsTable extends Migration {
 }
 ```
 
-漂亮！少量的提示在这里：
+貍ゆｺｮ�∝ｰ鷹㍼逧�署遉ｺ蝨ｨ霑咎㈹�
 
-- 生成器将默认使用自增的`id`字段作为主键
-- 它解析`fields`选项，并添加这些字段
-- drop方法能够足够聪明的意识到，在相反的情况下，这个表应该被完全删除
+- 逕滓�蝎ｨ蟆�ｻ倩ｮ､菴ｿ逕ｨ閾ｪ蠅樒噪`id`蟄玲ｮｵ菴應ｸｺ荳ｻ髞ｮ
+- 螳�ｧ｣譫秦fields`騾蛾｡ｹ�悟ｹｶ豺ｻ蜉霑吩ｺ帛ｭ玲ｮｵ
+- drop譁ｹ豕戊�螟溯ｶｳ螟溯↑譏守噪諢剰ｯ�芦�悟惠逶ｸ蜿咲噪諠��荳具ｼ瑚ｿ吩ｸｪ陦ｨ蠎碑ｯ･陲ｫ螳悟�蛻髯､
 
-声明字段，使用逗号+空格分隔键值列表[key:value:option sets]，其中`key`表示字段的名称，`value`表示[字段的类型](http://laravel.com/docs/schema#adding-columns)，`option`表示制定索引或者像是`unique`、`nullable`这样的属性。
-这里是一些示例:
+螢ｰ譏主ｭ玲ｮｵ�御ｽｿ逕ｨ騾怜捷+遨ｺ譬ｼ蛻�囈髞ｮ蛟ｼ蛻苓｡ｨ[key:value:option sets]�悟�荳ｭ`key`陦ｨ遉ｺ蟄玲ｮｵ逧�錐遘ｰ�形value`陦ｨ遉ｺ[蟄玲ｮｵ逧�ｱｻ蝙犠(http://laravel.com/docs/schema#adding-columns)�形option`陦ｨ遉ｺ蛻ｶ螳夂ｴ｢蠑墓�閠�ワ譏ｯ`unique`縲～nullable`霑呎ｷ逧�ｱ樊ｧ縲
+霑咎㈹譏ｯ荳莠帷､ｺ萓:
 
 - `--fields="first:string, last:string"`
 - `--fields="age:integer, yob:date"`
@@ -240,17 +251,17 @@ class CreatePostsTable extends Migration {
 - `--fields="name:string:default('John Doe'), bio:text:nullable"`
 - `--fields="username:string(30):unique, age:integer:nullable:default(18)"`
 
-请注意最后一个示例，这里我们指定了`string(30)`的字符串限制。这将产生`$table->string('username', 30)->unique();`
+隸ｷ豕ｨ諢乗怙蜷惹ｸ荳ｪ遉ｺ萓具ｼ瑚ｿ咎㈹謌台ｻｬ謖�ｮ壻ｺ�string(30)`逧�ｭ礼ｬｦ荳ｲ髯仙宛縲りｿ吝ｰ�ｺｧ逕歔$table->string('username', 30)->unique();`
 
-使用生成器删除表是可能的：
+菴ｿ逕ｨ逕滓�蝎ｨ蛻髯､陦ｨ譏ｯ蜿ｯ閭ｽ逧�ｼ
 
 	php artisan generate:migration delete_posts_table
 
-作为最后一个示例i，让我们运行一个迁移，从`tasks`表中，删除`completed`字段。
+菴應ｸｺ譛蜷惹ｸ荳ｪ遉ｺ萓喫�瑚ｮｩ謌台ｻｬ霑占｡御ｸ荳ｪ霑∫ｧｻ�御ｻ餐tasks`陦ｨ荳ｭ�悟唖髯､`completed`蟄玲ｮｵ縲
 
     php artisan generate:migration remove_completed_from_tasks_table --fields="completed:boolean"
 
-这一次，我们使用了"remove"关键字，生成器知道它要删除一个字段，并且把它添加到`down()`方法中。
+霑吩ｸ谺｡�梧�莉ｬ菴ｿ逕ｨ莠"remove"蜈ｳ髞ｮ蟄暦ｼ檎函謌仙勣遏･驕灘ｮ�ｦ∝唖髯､荳荳ｪ蟄玲ｮｵ�悟ｹｶ荳疲滑螳�ｷｻ蜉蛻ｰ`down()`譁ｹ豕穂ｸｭ縲
 
 ```php
 <?php
@@ -288,11 +299,11 @@ class RemoveCompletedFromTasksTable extends Migration {
 }
 ```
 
-### 模型
+### 讓｡蝙
 
     php artisan generate:model Post
 
-这将生成一个文件，`app/models/Post.php`并且写入下面的样板
+霑吝ｰ�函謌蝉ｸ荳ｪ譁�ｻｶ�形app/models/Post.php`蟷ｶ荳泌�蜈･荳矩擇逧�ｷ譚ｿ
 
 ```php
 <?php
@@ -302,24 +313,24 @@ class Post extends \Eloquent {
 }
 ```
 
-### 视图
+### 隗�崟
 
-视图生成器相当简单。
+隗�崟逕滓�蝎ｨ逶ｸ蠖鍋ｮ蜊輔
 
 ```bash
 php artisan generate:view admin.reports.index
 ```
 
-这个命令将创建一个空的视图，`/app/views/admin/reports/index.blade.php`。如果提供的文件夹不存在，它会自动帮你创建
+霑吩ｸｪ蜻ｽ莉､蟆��蟒ｺ荳荳ｪ遨ｺ逧�ｧ�崟�形/app/views/admin/reports/index.blade.php`縲ょｦよ棡謠蝉ｾ帷噪譁�ｻｶ螟ｹ荳榊ｭ伜惠�悟ｮ�ｼ夊�蜉ｨ蟶ｮ菴蛻帛ｻｺ
 
-### Seeds 生成数据[译注：应该是用来填充测试数据]
+### Seeds 逕滓�謨ｰ謐ｮ[隸第ｳｨ�壼ｺ碑ｯ･譏ｯ逕ｨ譚･蝪ｫ蜈�ｵ玖ｯ墓焚謐ｮ]
 
-Laravel为我们提供了非常灵活的方式来填充表
+Laravel荳ｺ謌台ｻｬ謠蝉ｾ帑ｺ�撼蟶ｸ轣ｵ豢ｻ逧�婿蠑乗擂蝪ｫ蜈�｡ｨ
 Laravel provides us with a flexible way to seed new tables.
 
     php artisan generate:seed users
 
-设置你想要生成的生成文件参数。这将生成 `app/database/seeds/UsersTableSeeder.php` 并用一下内容作为填充：
+隶ｾ鄂ｮ菴諠ｳ隕∫函謌千噪逕滓�譁�ｻｶ蜿よ焚縲りｿ吝ｰ�函謌 `app/database/seeds/UsersTableSeeder.php` 蟷ｶ逕ｨ荳荳句�螳ｹ菴應ｸｺ蝪ｫ蜈�ｼ
 
 ```php
 <?php
@@ -344,18 +355,18 @@ class UsersTableSeeder extends Seeder {
 }
 ```
 
-这将使用流行的Faker库为你提供一个基本的样板。这将是一个非常漂亮的方式来生成你的数据库表。不要忘记使用Composer来安装Faker！
+霑吝ｰ�ｽｿ逕ｨ豬∬｡檎噪Faker蠎謎ｸｺ菴謠蝉ｾ帑ｸ荳ｪ蝓ｺ譛ｬ逧�ｷ譚ｿ縲りｿ吝ｰ�弍荳荳ｪ髱槫ｸｸ貍ゆｺｮ逧�婿蠑乗擂逕滓�菴逧�焚謐ｮ蠎楢｡ｨ縲ゆｸ崎ｦ∝ｿ倩ｮｰ菴ｿ逕ｨComposer譚･螳芽｣�aker�
 
-### 关联表[译注：pivot 这个词愿意是中心点、中枢的意思，这里翻译成关联表比较合适，通俗一点就是两个表的mapping关系表，带有外键约束]
-当你需要一个关联表时，`generate:pivot`可以加速建立相应的表。
+### 蜈ｳ閨碑｡ｨ[隸第ｳｨ�嗔ivot 霑吩ｸｪ隸肴�諢乗弍荳ｭ蠢�せ縲∽ｸｭ譫｢逧�э諤晢ｼ瑚ｿ咎㈹鄙ｻ隸第�蜈ｳ閨碑｡ｨ豈碑ｾ�粋騾ゑｼ碁壻ｿ嶺ｸ轤ｹ蟆ｱ譏ｯ荳､荳ｪ陦ｨ逧�apping蜈ｳ邉ｻ陦ｨ�悟ｸｦ譛牙､夜醗郤ｦ譚歉
+蠖謎ｽ髴隕∽ｸ荳ｪ蜈ｳ閨碑｡ｨ譌ｶ�形generate:pivot`蜿ｯ莉･蜉騾溷ｻｺ遶狗嶌蠎皮噪陦ｨ縲
 
-简单的传递两个需要关联的表的名字。对于`orders`和`users`表，你可以：
+邂蜊慕噪莨騾剃ｸ､荳ｪ髴隕∝�閨皮噪陦ｨ逧�錐蟄励ょｯｹ莠餐orders`蜥形users`陦ｨ�御ｽ蜿ｯ莉･�
 
 ```bash
 php artisan generate:pivot orders users
 ```
 
-这个命令将创建下面的迁移：
+霑吩ｸｪ蜻ｽ莉､蟆��蟒ｺ荳矩擇逧�ｿ∫ｧｻ�
 
 ```php
 <?php
@@ -396,41 +407,41 @@ class CreateOrderUserTable extends Migration {
 }
 ```
 
-注意，它会正确设置你提供的两个表名，排名不分先后。现在，运行`php artisan migrate`来创建你的关联表！
+豕ｨ諢擾ｼ悟ｮ�ｼ壽ｭ｣遑ｮ隶ｾ鄂ｮ菴謠蝉ｾ帷噪荳､荳ｪ陦ｨ蜷搾ｼ梧賜蜷堺ｸ榊�蜈亥錘縲ら鴫蝨ｨ�瑚ｿ占｡形php artisan migrate`譚･蛻帛ｻｺ菴逧��閨碑｡ｨ�
 
-### 资源
+### 襍�ｺ
 
-`generate:resource`命令将会为你坐一系列的事情：
+`generate:resource`蜻ｽ莉､蟆�ｼ壻ｸｺ菴蝮蝉ｸ邉ｻ蛻礼噪莠区ュ�
 
-- 生成一个模型
-- 生成index, show, create, edit视图
-- 生成一个控制器
-- 生成一个数据库结构迁移
-- 生成一个数据库填充
-- 迁移这个数据库
+- 逕滓�荳荳ｪ讓｡蝙
+- 逕滓�index, show, create, edit隗�崟
+- 逕滓�荳荳ｪ謗ｧ蛻ｶ蝎ｨ
+- 逕滓�荳荳ｪ謨ｰ謐ｮ蠎鍋ｻ捺桷霑∫ｧｻ
+- 逕滓�荳荳ｪ謨ｰ謐ｮ蠎灘｡ｫ蜈
+- 霑∫ｧｻ霑吩ｸｪ謨ｰ謐ｮ蠎
 
-当你触发这个命令，它将对每个动作进行问询。通过这个方式，你可以告诉生成器，哪些是你确实需要的。
+蠖謎ｽ隗ｦ蜿題ｿ吩ｸｪ蜻ｽ莉､�悟ｮ�ｰ�ｯｹ豈丈ｸｪ蜉ｨ菴懆ｿ幄｡碁琉隸｢縲る夊ｿ�ｿ吩ｸｪ譁ｹ蠑擾ｼ御ｽ蜿ｯ莉･蜻願ｯ臥函謌仙勣�悟頭莠帶弍菴遑ｮ螳樣怙隕∫噪縲
 
-#### 例子
+#### 萓句ｭ
 
-想象如果你需要创建一个方法来显示文章。你需要手动创建一个控制器，一个模型，一个数据库迁移并且填充它，并且创建一个数据库填充...为什么不用生成器来做呢？
+諠ｳ雎｡螯よ棡菴髴隕∝�蟒ｺ荳荳ｪ譁ｹ豕墓擂譏ｾ遉ｺ譁�ｫ縲ゆｽ髴隕∵焔蜉ｨ蛻帛ｻｺ荳荳ｪ謗ｧ蛻ｶ蝎ｨ�御ｸ荳ｪ讓｡蝙具ｼ御ｸ荳ｪ謨ｰ謐ｮ蠎楢ｿ∫ｧｻ蟷ｶ荳泌｡ｫ蜈�ｮ�ｼ悟ｹｶ荳泌�蟒ｺ荳荳ｪ謨ｰ謐ｮ蠎灘｡ｫ蜈...荳ｺ莉荵井ｸ咲畑逕滓�蝎ｨ譚･蛛壼造�
 
 ```bash
 php artisan generate:resource post --fields="title:string, body:text"
 ```
 
-如果你对每个询问说yes，这个命令会给你如下样板：
+螯よ棡菴蟇ｹ豈丈ｸｪ隸｢髣ｮ隸ｴyes�瑚ｿ吩ｸｪ蜻ｽ莉､莨夂ｻ吩ｽ螯ゆｸ区ｷ譚ｿ�
 
 - app/models/Post.php
 - app/controllers/PostsController.php
 - app/database/migrations/timestamp-create_posts_table.php (including the schema)
 - app/database/seeds/PostsTableSeeder.php
 
-### Scaffolding 脚手架
+### Scaffolding 閼壽焔譫ｶ
 
-脚手架生成器类似于`generate:resource`，除了创建一些初始化样板外，同时也是为了方便。
+閼壽焔譫ｶ逕滓�蝎ｨ邀ｻ莨ｼ莠餐generate:resource`�碁勁莠��蟒ｺ荳莠帛�蟋句喧譬ｷ譚ｿ螟厄ｼ悟酔譌ｶ荵滓弍荳ｺ莠�婿萓ｿ縲
 
-例如，在运行`generate:scaffold post`时，你的控制器模板将会将会是：
+萓句ｦゑｼ悟惠霑占｡形generate:scaffold post`譌ｶ�御ｽ逧�而蛻ｶ蝎ｨ讓｡譚ｿ蟆�ｼ壼ｰ�ｼ壽弍�
 
 ```php
 <?php
@@ -542,23 +553,23 @@ class PostsController extends \BaseController {
 }
 ```
 
-请注意我们鼓励您去修改这些自动生成的控制器。它只是一个简单的开始。
+隸ｷ豕ｨ諢乗�莉ｬ鮠灘干謔ｨ蜴ｻ菫ｮ謾ｹ霑吩ｺ幄�蜉ｨ逕滓�逧�而蛻ｶ蝎ｨ縲ょｮ�宵譏ｯ荳荳ｪ邂蜊慕噪蠑蟋九
 
-### Configuration 配置
+### Configuration 驟咲ｽｮ
 
-你或许想修改你的模板--自动生成的文件是怎样格式化的。考虑到这一点，你需要发布你的模板，生成器将会使用它们。
+菴謌冶ｮｸ諠ｳ菫ｮ謾ｹ菴逧�ｨ｡譚ｿ--閾ｪ蜉ｨ逕滓�逧�枚莉ｶ譏ｯ諤取ｷ譬ｼ蠑丞喧逧�り�剔蛻ｰ霑吩ｸ轤ｹ�御ｽ髴隕∝書蟶�ｽ逧�ｨ｡譚ｿ�檎函謌仙勣蟆�ｼ壻ｽｿ逕ｨ螳�ｻｬ縲
 
 ```bash
 php artisan generate:publish-templates
 ```
 
-你要复制所有`app/templates`目录下的模板。你可以修改这些只要你满意它的格式。如果你喜欢不同的目录：
+菴隕∝､榊宛謇譛荏app/templates`逶ｮ蠖穂ｸ狗噪讓｡譚ｿ縲ゆｽ蜿ｯ莉･菫ｮ謾ｹ霑吩ｺ帛宵隕∽ｽ貊｡諢丞ｮ�噪譬ｼ蠑上ょｦよ棡菴蝟懈ｬ｢荳榊酔逧�岼蠖包ｼ
 
 ```bash
 php artisan generate:publish-templates --path=app/foo/bar/templates
 ```
 
-当你运行`generate:publish-templates` ,它也会将配置发布到`app/config/packages/way/generators/config/config.php`文件。这个文件看起来有点像：
+蠖謎ｽ霑占｡形generate:publish-templates` ,螳�ｹ滉ｼ壼ｰ��鄂ｮ蜿大ｸ�芦`app/config/packages/way/generators/config/config.php`譁�ｻｶ縲りｿ吩ｸｪ譁�ｻｶ逵玖ｵｷ譚･譛臥せ蜒擾ｼ
 
 ```php
 <?php
@@ -605,11 +616,11 @@ return [
 ];
 ```
 
-同时，当你修改这个文件的时候，注意你也可以更新每个默认的生成器目标目录。
+蜷梧慮�悟ｽ謎ｽ菫ｮ謾ｹ霑吩ｸｪ譁�ｻｶ逧�慮蛟呻ｼ梧ｳｨ諢丈ｽ荵溷庄莉･譖ｴ譁ｰ豈丈ｸｪ鮟倩ｮ､逧�函謌仙勣逶ｮ譬�岼蠖輔
 
-### Shortcuts 快捷命令
+### Shortcuts 蠢ｫ謐ｷ蜻ｽ莉､
 
-因为你可能会一次又一次的键入如下命令，命令别名显然是有意义的。
+蝗荳ｺ菴蜿ｯ閭ｽ莨壻ｸ谺｡蜿井ｸ谺｡逧�醗蜈･螯ゆｸ句多莉､�悟多莉､蛻ｫ蜷肴仞辟ｶ譏ｯ譛画э荵臥噪縲
 
 ```bash
 # Generator Stuff
@@ -620,7 +631,7 @@ alias g:s="php artisan generate:seed"
 alias g:mig="php artisan generate:migration"
 alias g:r="php artisan generate:resource"
 ```
-这些将被保存，例如，你的`~/.bash_profile` 或者 `~/.bashrc` 文件中。
+霑吩ｺ帛ｰ�｢ｫ菫晏ｭ假ｼ御ｾ句ｦゑｼ御ｽ逧Я~/.bash_profile` 謌冶 `~/.bashrc` 譁�ｻｶ荳ｭ縲
 
 
 
